@@ -5,5 +5,5 @@ serverSocket.bind(('', serverPort))
 print ('The server is ready to receive')
 while 1:
     ping, clientAddress = serverSocket.recvfrom(2048)
-    response = 'PONG'
+    response = bytes("PONG", "utf-8")
     serverSocket.sendto(response, clientAddress)

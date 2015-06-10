@@ -1,11 +1,11 @@
 from socket import *
 import time
 
-serverName = 'hostname'
+serverName = 'localhost'
 serverPort = 12000
 clientSocket = socket(AF_INET, SOCK_DGRAM)
 
-ping = "PING"
+ping = bytes("PING", "utf-8")
 
 # keep track time
 start = time.perf_counter()
