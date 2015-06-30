@@ -1,8 +1,8 @@
 from socket import *
 import time
 
-#serverName = 'localhost'
-serverName = 'google.com'
+serverName = 'localhost'
+#serverName = 'google.com'
 serverPort = 12000
 clientSocket = socket(AF_INET, SOCK_DGRAM)
 
@@ -21,15 +21,17 @@ def ping_server():
         return None
 
 sum = 0
-for i in range(0,10):
+success = 0
+for i in range(1,11):
     temp = ping_server()
     if temp == None:
         print('packet ' + str(i) + ' lost')
     else:
-        print('RTT = ' + str(temp) + ' seconds')
-    #sum += ping_server()
-
-#print('Avg ping time = ' + str(sum/10) + ' seconds')
+        print('packet ' + str(i) +' RTT = ' + str(temp) + ' seconds')
+        sum += ping_server()
+        success += 1
+if(success !=0):
+    print('Avg ping time = ' + str(sum/success) + ' seconds')
     
 
 clientSocket.close()
