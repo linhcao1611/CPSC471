@@ -32,6 +32,7 @@ for i in range(1,11):
         success += 1
 if(success !=0):
     print('Avg ping time = ' + str(sum/success) + ' seconds')
+    print('There are ' + str(success) + ' success packet')
     
 
 clientSocket.close()
