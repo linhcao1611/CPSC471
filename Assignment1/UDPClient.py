@@ -1,5 +1,6 @@
 from socket import *
 import time
+import os
 
 serverName = 'localhost'
 #serverName = 'google.com'
@@ -40,7 +41,7 @@ if(success !=0):
     print('Avg ping time = ' + str(sum/success) + ' seconds')
     print('There are ' + str(success) + ' success packet')
     
-raw_input()
+os.system("pause")
 clientSocket.close()
 
 

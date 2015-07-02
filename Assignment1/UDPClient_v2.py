@@ -12,8 +12,9 @@ ping = bytes("PING", "utf-8")
 # ping time if the server responses, return None if server
 # does not reponse 
 def ping_server():
-    # using settimeout socket's built-in function 
-    clientSocket.settimeout(0.00001) # set timeout 1 second
+    # using settimeout socket's built-in function
+    # set timeout 0.00001 second for testing 
+    clientSocket.settimeout(0.00001) 
     # while not timeout
     try:
         start = time.perf_counter()
@@ -42,7 +43,7 @@ while 1:
         success += 1
         print('Avg ping time = ' + str(round(sum/success,5)) + ' seconds')
         print('Success ping rate = ' + str(round((success*100/i),5)) + '%')
-        
+      
 clientSocket.close()
 
 
